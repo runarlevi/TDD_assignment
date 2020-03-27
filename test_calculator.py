@@ -14,3 +14,6 @@ def test_add_supports_unknown_numbers() -> int:
 
 def test_add_supports_newlines_as_delimiter() -> int:
     assert Calculator.Add("1\n2,3") == 6
+
+def test_add_ignores_numbers_bigger_than_1000() -> int:
+    assert Calculator.Add("1001,2") == 2
