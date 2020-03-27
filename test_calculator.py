@@ -1,4 +1,7 @@
 from calculator import Calculator
+from calculator import Error
+import pytest
+
 
 def test_add_empty_returns_zero() -> None:
     assert Calculator.Add("") == 0
@@ -17,3 +20,7 @@ def test_add_supports_newlines_as_delimiter() -> int:
 
 def test_add_ignores_numbers_bigger_than_1000() -> int:
     assert Calculator.Add("1001,2") == 2
+
+def test_raise_error_when_input_contains_negative_number():
+    with pytest.raises(Error, match=r"Negative numbers not allowed: -1"):
+        Calculator.Add("-1,2")

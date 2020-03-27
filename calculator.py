@@ -1,8 +1,20 @@
+class Error(Exception):
+    pass
+
 class Calculator(object):
     @staticmethod
     def Add(input: str) -> int:
         if input == "":
             return 0
+
+        if "-" in input:
+            errorStr = "Negative numbers not allowed: "
+            inputSplitted = input.split(",")
+            for index, num in enumerate(inputSplitted):
+                if "-" in num:
+                    errorStr += inputSplitted[index] + ", "
+                    errorStr = errorStr[:-2]
+            raise Error(errorStr)
 
         if "," in input and "\n" not in input:
             inputSplitted = input.split(",")
