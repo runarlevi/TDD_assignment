@@ -11,3 +11,6 @@ def test_add_supports_two_numbers() -> int:
 
 def test_add_supports_unknown_numbers() -> int:
     assert Calculator.Add("1,2,3,4,5") == 15
+
+def test_add_supports_newlines_as_delimiter() -> int:
+    assert Calculator.Add("1\n2,3") == 6
