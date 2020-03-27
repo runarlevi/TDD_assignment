@@ -8,3 +8,6 @@ def test_add_supports_single_number() -> int:
 
 def test_add_supports_two_numbers() -> int:
     assert Calculator.Add("1,2") == 3
+
+def test_add_supports_unknown_numbers() -> int:
+    assert Calculator.Add("1,2,3,4,5") == 15

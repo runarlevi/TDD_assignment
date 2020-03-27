@@ -5,5 +5,5 @@ class Calculator(object):
             return 0
         if "," in input:
             inputSplitted = input.split(",")
-            return int(inputSplitted[0]) + int(inputSplitted[1])
+            return sum([int(i) for i in inputSplitted])
         return int(input)
