@@ -24,3 +24,6 @@ def test_add_ignores_numbers_bigger_than_1000() -> int:
 def test_raise_error_when_input_contains_negative_number():
     with pytest.raises(Error, match=r"Negative numbers not allowed: -1"):
         Calculator.Add("-1,2")
+
+def test_add_supports_a_different_delimiter() -> int:
+    assert Calculator.Add("//X\n1X2") == 3
