@@ -13,18 +13,13 @@ class Calculator(object):
                 delimiter = input[2:3]
                 input = input[4:]
                 inputSplitted = input.split(delimiter)
-                for index, num in enumerate(inputSplitted):
-                    if "-" in num:
-                        errorStr += inputSplitted[index] + ", "
-                        errorStr = errorStr[:-2]
-                raise Error(errorStr)
             else:
                 inputSplitted = input.split(",")
-                for index, num in enumerate(inputSplitted):
-                    if "-" in num:
-                        errorStr += inputSplitted[index] + ", "
-                        errorStr = errorStr[:-2]
-                raise Error(errorStr)
+            for index, num in enumerate(inputSplitted):
+                if "-" in num:
+                    errorStr += inputSplitted[index] + ", "
+                    errorStr = errorStr[:-2]
+            raise Error(errorStr)
 
         if input[:2] == "//":
             delimiter = input[2:3]
